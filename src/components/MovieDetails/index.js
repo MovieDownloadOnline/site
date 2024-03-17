@@ -191,7 +191,7 @@ const MovieDetails = () => {
                 Magnet Links
               </Heading>
               <Wrap spacing={3} wrap="wrap" align="start" w="full">
-                  <MagnetUrl torrents={response.data.movie.torrents}/>
+                  <MagnetUrl torrents={response.data.movie.torrents} movie={response.data.movie["title_long"]}/>
               </Wrap>
               <Divider />
               <Heading as="h3" fontSize="lg" align="left" w="full">

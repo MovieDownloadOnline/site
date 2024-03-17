@@ -10,18 +10,18 @@ const trackerUrls = ["udp://open.demonii.com:1337/announce",
                     "udp://p4p.arenabg.com:1337",
                     "udp://tracker.leechers-paradise.org:6969"]; // Your list of tracker URLs
 
-function generateMagnetLink(torrent) {
+function generateMagnetLink(torrent, movie) {
   const { hash, quality, type, size } = torrent;
-  const displayName = `${quality}.${type} (${size})`;
+  const displayName = `${movie}.${quality}.${type} (${size})`;
   const trackersParam = trackerUrls.map(trackerUrl => `tr=${encodeURIComponent(trackerUrl)}`).join('&');
   return `magnet:?xt=urn:btih:${hash}&dn=${encodeURIComponent(displayName)}&${trackersParam}`;
 }
 
-function MagnetUrl({ torrents }) {
+function MagnetUrl({ torrents , movie}) {
   return (
     <Wrap spacing={3} wrap="wrap" align="start" w="full">
       {torrents.map((torrent, index) => {
-        const magnetLink = generateMagnetLink(torrent);
+        const magnetLink = generateMagnetLink(torrent, movie);
         return (
           <Button
             as="a"
