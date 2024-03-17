@@ -32,7 +32,7 @@ const Home = () => {
         <Box display={{ base: "block", lg: "none" }}>
           <RecentlyAdded />
         </Box>
-        <TopMovies type="rating" />
+        <TopMovies type="download_count" />
         <TopMoviesLanguage language="hi" />
         <TopMoviesLanguage language="fr" />
         {

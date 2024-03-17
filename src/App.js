@@ -7,6 +7,9 @@ import MovieDetails from "./components/MovieDetails";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-Z090Q2W49P");
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
