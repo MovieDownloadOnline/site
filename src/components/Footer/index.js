@@ -1,17 +1,16 @@
-import { Heading, HStack, Link, Text, VStack, Wrap } from "@chakra-ui/react";
+import { Center, HStack, Wrap } from "@chakra-ui/react";
+
 import { Link as RouterLink } from "react-router-dom";
 import React from "react";
-import { ImVideoCamera } from "react-icons/im";
-
+import LogoModeToggle from "../Navbar/LogoModeToggle";
 const Footer = () => {
   return (
-    <Wrap spacing={3} w="full" justify="space-between" align="center" mb={6}>
-      <VStack>
-        
-      </VStack>
-      <HStack as={RouterLink} to="/" fontSize="4xl">
-        <img src="/favicons/logo-bg.png" alt="Logo" height="40px" />
-      </HStack>
+    <Wrap spacing={2} w="full" justify="center" align="center" mb={5}>
+      <Center>
+        <HStack as={RouterLink} to="/" fontSize="4xl" maxW="200px">
+           <LogoModeToggle />
+        </HStack>
+      </Center>
     </Wrap>
   );
 };

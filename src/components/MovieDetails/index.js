@@ -29,6 +29,8 @@ import { AiFillLike, AiFillStar } from "react-icons/ai";
 import { FaDownload, FaLanguage } from "react-icons/fa";
 import Trailer from "./Trailer";
 import SuggestedMovies from "./SuggestedMovies";
+import MagnetUrl from "./MagnetUrl";
+// import Watch from "./Watch";
 
 const MovieDetails = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -181,17 +183,16 @@ const MovieDetails = () => {
                   <Trailer ytID={response.data.movie["yt_trailer_code"]} />
                 </>
               )}
-              {response.data.movie["description_full"] && (
-                <>
-                  <Divider />
-                  <Heading as="h3" fontSize="lg" align="left" w="full">
-                    Description
-                  </Heading>
-                  <Text align="left" w="full">
-                    {response.data.movie["description_full"]}
-                  </Text>
-                </>
-              )}
+              
+              {/* <Watch torrents={response.data.movie.torrents} /> */}
+              
+              <Divider />
+              <Heading as="h3" fontSize="lg" align="left" w="full">
+                Magnet Links
+              </Heading>
+              <Wrap spacing={3} wrap="wrap" align="start" w="full">
+                  <MagnetUrl torrents={response.data.movie.torrents}/>
+              </Wrap>
               <Divider />
               <Heading as="h3" fontSize="lg" align="left" w="full">
                 Torrents
@@ -213,6 +214,17 @@ const MovieDetails = () => {
                   })}
               </Wrap>
               <Divider />
+              {response.data.movie["description_full"] && (
+                <>
+                  <Divider />
+                  <Heading as="h3" fontSize="lg" align="left" w="full">
+                    Description
+                  </Heading>
+                  <Text align="left" w="full">
+                    {response.data.movie["description_full"]}
+                  </Text>
+                </>
+              )}
               <Heading as="h3" fontSize="lg" align="left" w="full">
                 Suggested Movies
               </Heading>

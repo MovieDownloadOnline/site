@@ -25,6 +25,7 @@ import { ImVideoCamera } from "react-icons/im";
 import { Logo } from "react-icons/im";
 import React, { useState } from "react";
 import ColorModeToggle from "./ColorModeToggle";
+import LogoModeToggle from "./LogoModeToggle";
 import { Link, useHistory } from "react-router-dom";
 import InputAsButton from "./InputAsButton";
 import { IoMenu, IoSearchSharp } from "react-icons/io5";
@@ -44,8 +45,8 @@ const Navbar = ({ toggleSideNav }) => {
   return (
     <SimpleGrid as="header" columns={5} row={1} spacing={3} mt={6} mb={9}>
       <GridItem colSpan={{ base: 3, lg: 1 }}>
-        <HStack as={Link} to="/" fontSize="4xl" maxW="220px" w="full">
-            <img src="/favicons/logo-bg.png" alt="Logo" height="40px" />
+        <HStack as={Link} to="/" fontSize="4xl" maxW="200px" w="full">
+         <LogoModeToggle />
         </HStack>
       </GridItem>
       <GridItem colSpan={{ base: 5, lg: 3 }}>

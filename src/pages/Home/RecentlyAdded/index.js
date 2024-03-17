@@ -10,7 +10,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import MovieCard from "../../../components/MovieCard";
+import MovieCardSmall from "../../../components/MovieCardSmall";
 import useAPIrequest from "../../../adapters/useAPIrequest";
 import { Link } from "react-router-dom";
 
@@ -53,12 +53,12 @@ const RecentlyAdded = () => {
         w="full"
       >
         {response &&
-          response.data.movies.slice(0, 6).map((val, key) => {
+          response.data.movies.slice(0, 8).map((val, key) => {
             return (
               <GridItem key={key} w="full">
-                <MovieCard
-                  img={val["background_image"]}
-                  aspect={16 / 9}
+                <MovieCardSmall
+                  img={val["medium_cover_image"]}
+                  
                   title={val["title_english"]}
                   year={val["year"]}
                   isLoading={isLoading}

@@ -8,9 +8,11 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
-import NewRelease from "./NewRelease";
+//import NewRelease from "./NewRelease";
 import RecentlyAdded from "./RecentlyAdded";
 import TopMovies from "./TopMovies";
+import TopMoviesLanguage from "./TopMoviesLanguage";
+
 
 const Home = () => {
   return (
@@ -24,13 +26,19 @@ const Home = () => {
         p={{ base: 3, md: 6 }}
         rounded="xl"
       >
-        <NewRelease />
+
+        {//<NewRelease /> 
+        }
         <Box display={{ base: "block", lg: "none" }}>
           <RecentlyAdded />
         </Box>
         <TopMovies type="rating" />
-        <TopMovies type="like_count" />
-        <TopMovies type="download_count" />
+        <TopMoviesLanguage language="hi" />
+        <TopMoviesLanguage language="fr" />
+        {
+        //<TopMovies type="like_count" />
+        //<TopMovies type="download_count" />
+        }
         <Center w="full">
           <Button as={Link} to="/movies/all" colorScheme="green">
             Discover More Movies
